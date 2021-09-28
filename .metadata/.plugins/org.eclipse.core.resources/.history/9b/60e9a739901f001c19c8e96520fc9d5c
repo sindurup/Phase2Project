@@ -1,0 +1,73 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+<meta charset="ISO-8859-1">
+<title>Learners Academy</title>
+</head>
+<body>
+
+
+<%
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+HttpSession session1=request.getSession();
+out.println("Name:"+session.getAttribute("uname"));
+
+    if(session.getAttribute("uname")==null)
+    {
+
+    	 response.sendRedirect("Login.jsp");
+    }
+%>
+
+   <div class="form-group" align="center" >
+   <form id="logout" class="form" action="logout" method="post">
+                                
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" name="submit" class="btn btn-info btn-md" value="logout">
+    </form>
+                            </div>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Login form</h3>
+     
+        <div class="container">
+         
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login" class="form" action="login" method="post">
+                               
+                            <div class="form-group">
+                            
+                             <label for="username" class="text-info">Select Class:</label><br>
+                             
+                                 <select name="Class" id="Class">
+								  <option value="Class1">Class1</option>
+								  <option value="Class2">Class2</option>
+								  <option value="Class3">Class3</option>
+								  <option value="Class4">Class4</option>
+								  <option value="Class5">Class5</option>
+								  <option value="Class6">Class6</option>
+								  <option value="Class7">Class7</option>
+								  <option value="Class8">Class8</option>
+								  <option value="Class9">Class9</option>
+								  <option value="Class10">Class10</option>
+								 
+								  
+								</select>
+                            <div class="form-group">
+                                
+                            </div>
+                        
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
