@@ -1,0 +1,136 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@  page import="java.sql.*" %>
+    <%@ page import= "com.report.dao.*" %>
+<!DOCTYPE html>
+
+
+<html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Learners Academy</title>
+
+     <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: red;
+  color: white;
+}
+</style>
+</head>
+<body>
+<%
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+HttpSession session1=request.getSession();
+
+
+    if(session.getAttribute("uname")==null)
+    {
+
+    	 response.sendRedirect("Login.jsp");
+    }
+%>
+
+
+
+<div align="center"><label ><h1 class="text-center text-info"><font color="0C6486" size="50px"><b>Learners Academy</b></font></h1></label>
+ <img src="D:\Phase2Project\LearnersAcademyPro\1.png" style="width:70px;height:80px;" align="middle"></div>
+   <div class="form-group" align="center" >
+   <form id="logout" class="form" action="logout" method="post">
+                                
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" name="submit" class="btn btn-info btn-md" value="logout">
+    </form>
+                            </div>
+    <div id="login">
+      <h3 class="text-center text-info">Class<%=request.getParameter("cls") %> Report</h3>
+     
+        <div class="container" width="100%">
+         
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                    
+                    
+                    
+                     <form id="clsReport" class="form" action=""  name="clsReport" >
+                            <h3 class="text-info"></h3>
+                          
+                       
+  <%
+	String classId=request.getParameter("cls");
+	 
+	ReportDao ob=new ReportDao();
+	ResultSet rs=ob.getStudents(Integer.parseInt(classId));
+	
+	String stuData="";
+	try {
+		
+		out.write("<table id='customers'>" +
+			       "<tr style='background-color:#c8dce0'>" +
+			       "<td >SNo</td>" +
+			       "<td ></td>"+
+			       "<td>Student Name</td>" +
+			       "<td ></td>" + 
+			       "<td>Subject</td>" +
+			       "<td ></td>" +
+			       "<td>Teacher</td>" +
+			       "<td ></td>" +
+			       "</tr>");
+		while(rs.next())
+		{
+		
+			        out.write("<tr>");
+				    out.write("<td>");
+				    out.write(rs.getString(1));
+				    out.write("</td><td></td><td>");
+				    out.write(rs.getString(2)+" "+rs.getString(3));
+				    out.write("</td><td></td><td>");
+				    out.write("status");
+				    out.write("</td><td></td><td>");
+				    out.write("lastDatxsdsde");
+				    out.write("</td><td></td></tr>"); 
+			
+	
+			
+		}
+		 out.write("</table>"); 
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+%>
+                        
+                            
+                        </form>
+                    
+                    
+              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

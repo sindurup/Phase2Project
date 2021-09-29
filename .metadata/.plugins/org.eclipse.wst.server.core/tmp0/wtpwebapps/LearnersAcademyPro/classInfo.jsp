@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -41,6 +42,8 @@ HttpSession session1=request.getSession();
     	 response.sendRedirect("Login.jsp");
     }
 %>
+    
+
 
 <div align="center"><label ><h1 class="text-center text-info"><font color="0C6486" size="50px"><b>Learners Academy</b></font></h1></label>
  <img src="D:\Phase2Project\LearnersAcademyPro\1.png" style="width:70px;height:80px;" align="middle"></div>
