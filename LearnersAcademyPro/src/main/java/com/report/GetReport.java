@@ -25,26 +25,7 @@ public class GetReport extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		/*String classId=request.getParameter("className");
-		PrintWriter out=response.getWriter();
-		ReportDao ob=new ReportDao();
-		ResultSet rs=ob.getStudents(Integer.parseInt(classId));
-		
-		String stuData="";
-		try {
-			while(rs.next())
-			{
-				stuData=rs.getString(2)+":"+rs.getString(3);
-				out.println(stuData);
-				out.println("\n");
-				
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();*/
-		
-		
+	{		
 		
 		String classId=request.getParameter("className");
 		if(classId!=null)

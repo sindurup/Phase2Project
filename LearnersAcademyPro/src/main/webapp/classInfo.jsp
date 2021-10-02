@@ -42,19 +42,18 @@ HttpSession session1=request.getSession();
     	 response.sendRedirect("Login.jsp");
     }
 %>
-    
+  <br/>  
 
+<div align="right">
+ <form id="logout" class="form" action="logout" method="post"> <input type="submit" name="submit" class="btn btn-info btn-md" align="right" value="logout" margin="10px"/>
+    </form></div>
 
-<div align="center"><label ><h1 class="text-center text-info"><font color="0C6486" size="50px"><b>Learners Academy</b></font></h1></label>
- <img src="D:\Phase2Project\LearnersAcademyPro\1.png" style="width:70px;height:80px;" align="middle"></div>
-   <div class="form-group" align="center" >
-   <form id="logout" class="form" action="logout" method="post">
-                                
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" name="submit" class="btn btn-info btn-md" value="logout">
-    </form>
-                            </div>
+ <div align="center">
+ <img src="D:\Phase2Project\LearnersAcademyPro\logo.jpg" style="width:280px;height:300px;align="middle">
+ 
+ 
     <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
+       
      
         <div class="container">
          
@@ -65,9 +64,9 @@ HttpSession session1=request.getSession();
                     
                     
                      <form id="getReport" class="form" action="getReport" method="post" name="getReport" onSubmit="return required();">
-                            <h3 class="text-center text-info">Class Report</h3>
-                            <div class="form-group">
-                                  <label for="username" class="text-info">Select Class:</label><br>
+                           
+                            <div class="form-group" align="left">
+                                  <label for="username" class="text-info" >Select Class:</label><br>
                                 
                                 
                                   <select name="className" id="className" class="form-control">
@@ -86,15 +85,16 @@ HttpSession session1=request.getSession();
 								  
 								</select>
                             </div>
-                           
-                            <div class="form-group">
+                            
+     <div class="form-group" align="left">
                                 
                                 <input type="submit" name="Submit" class="btn btn-info btn-md" value="Submit">
-                            </div>
+                            </div>     
+                         
                             
                         </form>
                     
-                    
+                   
               
                     </div>
                 </div>

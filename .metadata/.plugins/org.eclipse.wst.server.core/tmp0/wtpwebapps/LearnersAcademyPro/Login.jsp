@@ -9,8 +9,14 @@
 <script type="text/javascript">
 function required() 
 {
+	
+	
 	var uname=document.login.username.value;
 	var pw=document.login.password.value;
+	
+	var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+	
 	
   if (uname == "")
    { 
@@ -26,23 +32,25 @@ function required()
    }  
   else if ((uname.length<5)||(uname.length>15))
   { 
-     alert("Username of invalid length");  
+     alert("Username length should be 5 to 15 characters");  
      document.login.username.focus();
      return false; 
   } 
   else if ((pw.length<7)||(pw.length>15))
   { 
-     alert("Password length should be 7 to 15 digits");  
+     alert("Password length should be 7 to 15 characters");  
      document.login.password.focus();
      return false; 
   } 
-  else
+  
+ 
+else
+  
 	  {
         return true; 
 	  }
   
-  
- 
+
   
  } 
 
@@ -52,10 +60,10 @@ function required()
 </head>
 <body>
 
- <div align="center"><label ><h1 class="text-center text-info"><font color="0C6486" size="50px"><b>Learners Academy</b></font></h1></label>
- <img src="D:\Phase2Project\LearnersAcademyPro\1.png" style="width:70px;height:80px;" align="middle"></div>
+ <div align="center">
+ <img src="D:\Phase2Project\LearnersAcademyPro\logo.jpg" style="width:280px;height:300px;align="middle"></div>
     <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
+       
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
